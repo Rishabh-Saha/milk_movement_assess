@@ -1,0 +1,39 @@
+--------------- CURL to insert data --------------
+
+curl --location 'https://7a4yafkl72.execute-api.us-east-1.amazonaws.com/dev' \
+--header 'Content-Type: application/json' \
+--data '{
+  "event": {
+    "createdAt": "2023-07-24T19:52:07.507Z",
+    "type": "user.updated_trip",
+    "location": {
+      "type": "Point",
+      "coordinates": [-119.3056079094478, 36.00942850116281]
+    },
+    "user": {
+      "_id": "6477c8c614fe6c005a89df2b",
+      "updatedAt": "2023-07-24T19:52:07.507Z",
+      "MMUserId": "619481dd940bbe643baf776e",
+      "trip": {
+        "_id": "64bebf33fc633e0061e84882",
+        "createdAt": "2023-07-24T18:13:07.159Z",
+        "updatedAt": "2023-07-24T18:13:07.159Z",
+        "externalId": "1f76eed0-992a-4d17-b532-462f089a42e8",
+        "MMUserId": "619481dd940bbe643baf776e",
+        "startedAt": "2023-07-24T18:13:07.159Z",
+        "metadata": {
+          "route_session_type": "RawMilk",
+          "route_session_id": "64bebf32d38530406ca4f254"
+        }
+      }
+    }
+  }
+}'
+
+--------------- CURL to fetch presentation data --------------
+
+curl --location 'https://8rj4lzl7zf.execute-api.us-east-1.amazonaws.com/dev/getPresentationData'
+
+--------------- CURL to fetch route session data --------------
+
+curl --location 'https://8rj4lzl7zf.execute-api.us-east-1.amazonaws.com/dev/getRouteSessionDetails/?routeSessionId=64bebf32d38530406ca4f254'
